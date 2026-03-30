@@ -1,55 +1,39 @@
-* {
-    box-sizing: border-box;
-  }
-
-  body {
+body {
     margin: 0;
     background: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 10px;
+    height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .calculator {
-    width: 100%;
-    max-width: 320px;
+    width: 320px;
     background: black;
-    border-radius: 20px;
-    overflow: hidden;
   }
 
   .display {
     color: white;
-    font-size: clamp(32px, 8vw, 64px);
+    font-size: 64px;
     text-align: right;
-    padding: clamp(12px, 3vw, 20px);
+    padding: 20px;
     overflow-x: auto;
-    word-wrap: break-word;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
   }
 
   .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: clamp(8px, 2vw, 12px);
-    padding: clamp(8px, 2vw, 12px);
+    grid-gap: 12px;
+    padding: 12px;
   }
 
   button {
-    aspect-ratio: 1;
+    height: 70px;
     border-radius: 50%;
     border: none;
-    font-size: clamp(16px, 4vw, 28px);
+    font-size: 28px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.1s ease;
-    min-height: 50px;
   }
 
   .gray {
@@ -71,33 +55,9 @@
     grid-column: span 2;
     border-radius: 40px;
     text-align: left;
-    padding-left: clamp(16px, 4vw, 28px);
+    padding-left: 28px;
   }
 
   button:active {
     filter: brightness(1.2);
-    transform: scale(0.95);
-  }
-
-  button:hover {
-    filter: brightness(1.1);
-  }
-
-  /* Tablets and landscape */
-  @media (min-width: 768px) {
-    .calculator {
-      max-width: 400px;
-    }
-  }
-
-  /* Prevent layout shift on very small screens */
-  @media (max-width: 320px) {
-    .display {
-      font-size: clamp(24px, 5vw, 48px);
-    }
-
-    button {
-      font-size: clamp(12px, 3vw, 20px);
-      min-height: 40px;
-    }
   }
